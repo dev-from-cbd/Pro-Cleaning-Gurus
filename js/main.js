@@ -55,9 +55,13 @@ if (window.innerWidth <= 768) {
     function updateParallax() {
         parallaxElements.forEach(el => {
             const rect = el.getBoundingClientRect();
-            const speed = 0.4; // tune for desired intensity
-            const offset = (rect.top - window.innerHeight / 2) * speed;
-            el.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+            const speed = 0.35; // slightly softer for mobile
+            let offset = (rect.top - window.innerHeight / 2) * speed;
+            // Clamp offset to avoid exposing empty areas
+            const maxShift = Math.min(90, el.offsetHeight * 0.25);
+            if (offset > maxShift) offset = maxShift;
+            if (offset < -maxShift) offset = -maxShift;
+            el.style.backgroundPosition = `center calc(50% + ${Math.round(offset)}px)`;
         });
         ticking = false;
     }

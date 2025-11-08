@@ -282,6 +282,11 @@ footer {
         gap: 20px;
     }
 
+    /* Slightly reduce parallax section height on mobile to avoid long empty gaps */
+    .parallax {
+        height: 50vh;
+    }
+
     .parallax-content h2 {
         font-size: 2rem;
     }
