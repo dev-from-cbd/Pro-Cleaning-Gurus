@@ -40,10 +40,37 @@ window.addEventListener('scroll', function () {
     }
 });
 
-// Parallax effect for mobile devices
+// Mobile-friendly parallax (enables parallax on small screens where CSS fixed isn't supported)
 if (window.innerWidth <= 768) {
     const parallaxElements = document.querySelectorAll('.parallax');
-    parallaxElements.forEach(element => {
-        element.style.backgroundAttachment = 'scroll';
+
+    // Ensure scroll-based background movement
+    parallaxElements.forEach(el => {
+        el.style.backgroundAttachment = 'scroll';
+        el.style.backgroundPosition = 'center center';
     });
+
+    let ticking = false;
+
+    function updateParallax() {
+        parallaxElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const speed = 0.4; // tune for desired intensity
+            const offset = (rect.top - window.innerHeight / 2) * speed;
+            el.style.backgroundPosition = `center calc(50% + ${offset}px)`;
+        });
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    // Initial paint
+    onScroll();
 }
