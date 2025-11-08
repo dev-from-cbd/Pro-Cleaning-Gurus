@@ -170,6 +170,7 @@ nav a:hover {
     text-align: left;
     margin-left: 0;
     margin-right: 0;
+    max-width: none;
 }
 
 /* Services Grid */
