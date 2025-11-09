@@ -214,6 +214,15 @@ nav a:hover {
     max-width: none;
 }
 
+/* Service icons */
+.service-icon {
+    width: 32px;
+    height: 32px;
+    color: #3498db;
+    margin-bottom: 12px;
+    display: block;
+}
+
 /* Testimonials */
 .testimonials {
     background: #f8f9fa;
