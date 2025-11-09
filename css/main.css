@@ -218,7 +218,7 @@ nav a:hover {
 .service-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 12px;
 }
 
@@ -226,12 +226,39 @@ nav a:hover {
     margin: 0;
 }
 
+/* Accent color variable */
+:root {
+    --accent: #3498db;
+}
+
 /* Service icons */
 .service-icon {
-    width: 28px;
-    height: 28px;
-    color: #3498db;
+    width: 32px;
+    height: 32px;
+    color: var(--accent);
     flex-shrink: 0;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effects for service cards */
+.service-card:hover .service-icon {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.service-card:hover .service-header h3 {
+    color: var(--accent);
+}
+
+/* Mobile adjustments */
+@media (max-width: 400px) {
+    .service-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .service-header {
+        gap: 8px;
+    }
 }
 
 /* Testimonials */
@@ -299,6 +326,30 @@ nav a:hover {
     padding: 20px;
     background: #f4f4f4;
     border-left: 5px solid #007bff;
+}
+
+/* Trust & Compliance Section */
+#trust {
+    text-align: center;
+}
+
+.trust-details {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 22px;
+    background: #f8f9fa;
+    border-left: 5px solid var(--accent);
+}
+
+.checks-list {
+    text-align: left;
+    margin: 16px auto;
+    line-height: 1.6;
+}
+
+.vaccination-note {
+    color: #555;
+    margin-top: 12px;
 }
 
 /* Footer */
