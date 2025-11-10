@@ -263,15 +263,29 @@ nav a:hover {
 
 /* Testimonials */
 .testimonials {
-    background: #f8f9fa;
+    position: relative;
+    background: url('images/bg8.png') center/cover fixed no-repeat;
     padding: 80px 20px;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 0;
 }
 
 .testimonials h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #ffffff;
     margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonials-grid {
@@ -280,6 +294,8 @@ nav a:hover {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial {
@@ -403,5 +419,11 @@ footer a:focus {
 
     .parallax-content h2 {
         font-size: 2rem;
+    }
+
+    /* Mobile-friendly fallback for testimonials parallax */
+    .testimonials {
+        background-attachment: scroll;
+        background-position: center center;
     }
 }
