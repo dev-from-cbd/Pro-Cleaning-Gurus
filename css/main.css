@@ -181,6 +181,48 @@ nav a:hover {
     max-width: none;
 }
 
+/* Discounts page: left-aligned reading layout */
+.discounts h2,
+.discounts h3,
+.discounts h4 {
+    text-align: left;
+}
+.discounts p {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+}
+.discounts hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Discounts table styling */
+.discount-table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #f8f9fa;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.discount-table thead th {
+    background: #eef6ff;
+    color: #2c3e50;
+}
+.discount-table th,
+.discount-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+.discount-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 /* Services Grid */
 .services-grid {
     display: grid;
