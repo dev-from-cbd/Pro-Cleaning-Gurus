@@ -130,6 +130,10 @@ nav a:hover {
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
 }
+/* No overlay for discounts hero — keep image clear */
+.discounts-hero::before {
+    background: none;
+}
 
 .parallax-content {
     position: relative;
@@ -466,19 +470,22 @@ footer a:focus {
     /* Discounts page mobile tuning */
     .discounts-hero {
         margin-top: 70px; /* compensate fixed nav */
+        background-attachment: scroll; /* avoid parallax jank on mobile */
+        height: 34vh; /* smaller hero for mobile */
     }
     .discounts-hero .parallax-content {
-        padding: 14px 16px;
-        background: rgba(0,0,0,0.35);
-        border-radius: 8px;
+        padding: 8px 12px;
+        background: none;
+        border-radius: 0;
     }
     .discounts-hero .parallax-content h2 {
-        line-height: 1.25;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        line-height: 1.2;
+        font-size: 1.3rem;
+        text-shadow: none;
     }
     .discounts-hero .parallax-content p {
         font-size: 0.95rem;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        text-shadow: none;
     }
     .discounts .discount-table {
         font-size: 0.95rem;
