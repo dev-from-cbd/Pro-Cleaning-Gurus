@@ -104,6 +104,18 @@ nav ul {
   display: inline-block;
 }
 
+/* Desktop: keep icon and text perfectly aligned */
+nav ul li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+nav ul li a svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   nav ul li a {
     display: inline-flex;
