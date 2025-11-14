@@ -99,29 +99,30 @@ nav ul {
 
 /* Inline icons for navigation links */
 .nav-icon {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
 }
 
 /* Desktop: keep icon and text perfectly aligned */
 nav ul li a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
+
 nav ul li a svg {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
-  nav ul li a {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
+    nav ul li a {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+    }
 }
 
 nav a {
@@ -147,6 +148,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
 }
+
 .menu-toggle .bar {
     position: absolute;
     width: 26px;
@@ -155,12 +157,32 @@ nav a:hover {
     border-radius: 3px;
     transition: transform 300ms ease, opacity 300ms ease, top 300ms ease;
 }
-.menu-toggle .bar:nth-child(1) { top: 13px; }
-.menu-toggle .bar:nth-child(2) { top: 20px; }
-.menu-toggle .bar:nth-child(3) { top: 27px; }
-nav.open .menu-toggle .bar:nth-child(1) { top: 20px; transform: rotate(45deg); }
-nav.open .menu-toggle .bar:nth-child(2) { opacity: 0; }
-nav.open .menu-toggle .bar:nth-child(3) { top: 20px; transform: rotate(-45deg); }
+
+.menu-toggle .bar:nth-child(1) {
+    top: 13px;
+}
+
+.menu-toggle .bar:nth-child(2) {
+    top: 20px;
+}
+
+.menu-toggle .bar:nth-child(3) {
+    top: 27px;
+}
+
+nav.open .menu-toggle .bar:nth-child(1) {
+    top: 20px;
+    transform: rotate(45deg);
+}
+
+nav.open .menu-toggle .bar:nth-child(2) {
+    opacity: 0;
+}
+
+nav.open .menu-toggle .bar:nth-child(3) {
+    top: 20px;
+    transform: rotate(-45deg);
+}
 
 /* Parallax Sections */
 .parallax {
@@ -192,30 +214,35 @@ nav.open .menu-toggle .bar:nth-child(3) { top: 20px; transform: rotate(-45deg); 
 
 /* Promo Discounts CTA block */
 .promo-discounts {
-    height: 100vh;
-    background-attachment: scroll; /* avoid jank on mobile */
+    height: 60vh;
 }
+
 .promo-discounts::before {
-    background: rgba(0,0,0,0.25); /* subtle darkening for text legibility */
+    background: rgba(0, 0, 0, 0.25);
+    /* subtle darkening for text legibility */
 }
+
 .promo-discounts .parallax-content {
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
     color: #fff;
     border-radius: 18px;
     padding: 22px 26px;
     text-align: center;
     backdrop-filter: blur(2px);
 }
+
 .promo-discounts .parallax-content h2 {
     margin: 0 0 8px;
     font-size: 2.2rem;
     text-shadow: none;
 }
+
 .promo-discounts .parallax-content p {
     margin: 0 0 16px;
     font-size: 1.1rem;
     opacity: 0.95;
 }
+
 .cta-button {
     display: inline-block;
     padding: 12px 18px;
@@ -224,9 +251,10 @@ nav.open .menu-toggle .bar:nth-child(3) { top: 20px; transform: rotate(-45deg); 
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     transition: transform 200ms ease, background 200ms ease;
 }
+
 .cta-button:hover,
 .cta-button:focus {
     background: #2980b9;
@@ -578,28 +606,41 @@ footer a:focus {
     }
 
     /* Mobile menu layout */
-    .menu-toggle { display: inline-flex; }
+    .menu-toggle {
+        display: inline-flex;
+    }
+
     nav ul {
         position: fixed;
         top: 70px;
         left: 20px;
         right: auto;
         width: clamp(280px, 92vw, 480px);
-        background: rgba(255,255,255,0.98);
+        background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(10px);
         border-radius: 14px;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         padding: 14px 16px;
         flex-direction: column;
         gap: 12px;
         display: none;
         animation: menuSlideDown 280ms ease forwards;
     }
-    nav.open ul { display: flex; }
+
+    nav.open ul {
+        display: flex;
+    }
 
     @keyframes menuSlideDown {
-        from { transform: translateY(-10px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(-10px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     /* Slightly reduce parallax section height on mobile to avoid long empty gaps */
@@ -610,10 +651,19 @@ footer a:focus {
     .parallax-content h2 {
         font-size: 2rem;
     }
+
     /* Promo discounts mobile sizing */
-    .promo-discounts { height: 80vh; }
-    .promo-discounts .parallax-content h2 { font-size: 1.8rem; }
-    .promo-discounts .parallax-content p { font-size: 1rem; }
+    .promo-discounts {
+        height: 80vh;
+    }
+
+    .promo-discounts .parallax-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .promo-discounts .parallax-content p {
+        font-size: 1rem;
+    }
 
     /* Discounts page mobile tuning */
     .discounts-hero {
@@ -671,6 +721,9 @@ footer a:focus {
         display: none;
         /* hide subheading on very small screens */
     }
+
     /* Promo discounts very small screens */
-    .promo-discounts { height: 72vh; }
+    .promo-discounts {
+        height: 72vh;
+    }
 }
