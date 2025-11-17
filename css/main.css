@@ -82,7 +82,7 @@ nav {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .logo {
@@ -90,11 +90,20 @@ nav {
     width: auto;
 }
 
+.brand-name {
+    display: none;
+    margin-left: 6px;
+    color: #2c3e50;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin-left: auto;
 }
 
 /* Inline icons for navigation links */
@@ -122,6 +131,18 @@ nav ul li a svg {
         display: inline-flex;
         align-items: center;
         gap: 12px;
+    }
+
+    nav ul {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .brand-name {
+        display: inline-flex;
+        align-items: center;
+        font-size: 1.05rem;
     }
 }
 
